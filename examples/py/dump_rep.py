@@ -70,7 +70,7 @@ if len(savedMap['start_locations']) != len(state.start_locations):
   print("Not the same number of start locations, replayer is bugged")
 
 slset = set(savedMap['start_locations'])
-trueslset = set((p.x, p.y) for p in state.start_locations)
+trueslset = {(p.x, p.y) for p in state.start_locations}
 if slset != trueslset:
     print("Start locations are bugged, replay has: ")
     print(slset)

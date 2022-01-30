@@ -17,18 +17,15 @@ DEBUG = args.debug
 
 
 def create_units(player, quantity, x=100, y=100, u_type=0):
-    commands = []
-    for i in range(quantity):
-        command = [
-            tcc.command_openbw,
-            tcc.openbwcommandtypes.SpawnUnit,
-            player,
-            u_type,
-            x,
-            y,
-        ]
-        commands.append(command)
-    return commands
+    command = [
+        tcc.command_openbw,
+        tcc.openbwcommandtypes.SpawnUnit,
+        player,
+        u_type,
+        x,
+        y,
+    ]
+    return [command for _ in range(quantity)]
 
 
 def kill_units(units, quantity):
